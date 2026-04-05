@@ -12,10 +12,13 @@ const createPoint = (id) => {
     : [];
   const uniqueOfferIds = [...new Set(offerIds)];
 
+  const dateFrom = `2026-07-${getRandomNumber(10, 31)}T${String(getRandomNumber(0, 23)).padStart(2, '0')}:${String(getRandomNumber(0, 59)).padStart(2, '0')}:00.000Z`;
+  const dateTo = `2026-07-${getRandomNumber(10, 31)}T${String(getRandomNumber(0, 23)).padStart(2, '0')}:${String(getRandomNumber(0, 59)).padStart(2, '0')}:00.000Z`;
+
   return {
     basePrice: getRandomNumber(100, 1000),
-    dateFrom: `2019-07-${getRandomNumber(10, 31)}T${ getRandomNumber(0, 23) }:${ getRandomNumber(0, 59) }:00.000Z`,
-    dateTo: `2019-07-${getRandomNumber(10, 31)}T${ getRandomNumber(0, 23) }:${ getRandomNumber(0, 59) }:00.000Z`,
+    dateFrom,
+    dateTo,
     destination,
     id: String(id),
     isFavorite: Boolean(getRandomNumber(0, 1)),
